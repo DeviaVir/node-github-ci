@@ -6,7 +6,7 @@
         <% if(job.finished) { %>
             <% var outcomeClass = (job.failed ? '.failure' : '.success'); %>
             <div class="outcome <%= outcomeClass %>">
-                <%= (job.failed ? '&#10008;&nbsp;failure' : '&#10003;&nbsp;success') %>
+                <%- (job.failed ? '&#10008;&nbsp;failure' : '&#10003;&nbsp;success') %>
             </div>
         <% } %>
     </a>
