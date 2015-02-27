@@ -48,4 +48,4 @@ var startServer = function() {
   return console.log("CI listening on port %d with host %s in directory %s".green, argv.p, argv.h, argv.d);
 };
 
-git.init(argv._[0], startServer);
+return git.init(argv._[0], startServer);
