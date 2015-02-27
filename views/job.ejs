@@ -1,0 +1,16 @@
+<li class="job">
+    <a href="<%= baseUrl() %>job/<%= job._id.toString() %>">
+        <% var d = new Date(job.addedTime); %>
+        <div class="time"><%= d.toDateString() %> <%= d.toTimeString() %></div>
+        <div class="job_id"><%= job._id.toString() %></div>
+        <% if(job.finished) { %>
+            <% var outcomeClass = (job.failed ? '.failure' : '.success'); %>
+            <div class="outcome <%= outcomeClass %>">
+                <%= (job.failed ? '&#10008;&nbsp;failure' : '&#10003;&nbsp;success') %>
+            </div>
+        <% } %>
+    </a>
+    <div class="job_container">
+        <%= job.log %>
+    </div>
+</li>

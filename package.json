@@ -1,45 +1,55 @@
 {
-  "name": "concrete",
-  "version": "0.0.3",
-  "description": "A minimalistic Continuous Integration server",
-  "author": "Ryan Kee <me@ryankee.com> (http://ryankee.com)",
-  "preferGlobal": true,
-  "keywords": [
-    "coffeescript",
-    "continuous integration",
-    "test",
-    "coffee"
-  ],
-  "bin": {
-    "concrete": "./bin/concrete"
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test/run all",
+    "test-all": "node test/run all",
+    "test-unit": "node test/run unit",
+    "test-integration": "node test/run integration",
+    "test-int": "node test/run integration"
   },
-  "directories": {
-    "bin": "./bin",
-    "lib": "./lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ryankee/concrete.git"
-  },
+  "name": "node-github-ci",
+  "license": "MIT",
   "dependencies": {
     "colors": "0.6.x",
-    "coffee-script": "1.2.x",
-    "optimist": "0.3.x",
     "express": "2.x",
-    "stylus": "0.x",
-    "coffeekup": "0.3.x",
     "mongodb": "0.9.x",
     "express-namespace": "*"
   },
-  "engines": {
-    "node": ">=0.10.0"
-  },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-coffee": "^0.10.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-stylus": "^0.16.0",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-jasmine-bundle": "^0.2.0"
-  }
+    "chai": "^1.10.0",
+    "chai-as-promised": "^4.1.1",
+    "hippie": "^0.3.0",
+    "jshint": "^2.5.10",
+    "jshint-stylish": "^0.4.0",
+    "mocha": "^1.21.5",
+    "optimist": "^0.6.1",
+    "sinon": "^1.12.2",
+    "sinon-chai": "^2.6.0"
+  },
+  "description": "CI node.js build server connected to github",
+  "version": "0.0.1",
+  "main": "ci.js",
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dualdev/node-github-ci.git"
+  },
+  "keywords": [
+    "continuous integration",
+    "test",
+    "github",
+    "ci"
+  ],
+  "bin": {
+    "ci": "./bin/ci"
+  },
+  "author": "Chase Sillevis <chase@sillevis.net> (http://chase.sillevis.net)",
+  "bugs": {
+    "url": "https://github.com/DualDev/node-github-ci/issues"
+  },
+  "homepage": "https://github.com/DualDev/node-github-ci"
 }

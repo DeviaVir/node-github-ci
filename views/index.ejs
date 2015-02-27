@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title><%= (title ? title + ' - ' : '') %>GitHub CI</title>
+        <% if(desc) { %>
+        <meta name="description" content="<%= desc %>" />
+        <% } %>
+
+        <link rel="stylesheet" href="<%= baseUrl() %>stylesheets/app.css" />
+
+        <script src="<%= baseUrl() %>js/jquery-1.6.2.min.js"></script>
+        <script src="<%= baseUrl() %>js/coffeekup.js"></script>
+        <script src="<%= baseUrl() %>ci.js"></script>
+        <script>window.baseUrl = '<%= baseUrl() %>';</script>
+    </head>
+    <body>
+        <header>
+            <hgroup>
+                <h1>GitHub Node.JS CI</h1>
+                <h2 class="project"><%= project %></h2>
+                <nav>
+                    <form method="post" action="<%= baseUrl() %>">
+                        <button class="build">Build</button>
+                    </form>
+                </nav>
+            </hgroup>
+        </header>
+        <div id="content">
+            <ul class="jobs">
+                <% if(jobs.length === 0) { %>
+                    <li class="nojob">No jobs have been submitted</li>
+                <% } else { %>
+                    <% jobs.forEach(function(job) { %>
+                        <%- include job.ejs %>
+                    <% }); %>
+                <% } %>
+            </ul>
+        </div>
+    </body>
+</html>
