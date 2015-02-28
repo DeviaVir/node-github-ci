@@ -1,6 +1,6 @@
 <li class="job">
     <a href="<%= baseUrl() %>job/<%= job._id.toString() %>">
-        <% var d = new Date(job.addedTime); %>
+        <% var d = new Date(job.addedTime * 1000); %>
         <div class="time"><%= d.toDateString() %> <%= d.toTimeString() %></div>
         <div class="job_id"><%= job._id.toString() %></div>
         <% if(job.finished) { %>

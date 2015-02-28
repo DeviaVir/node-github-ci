@@ -141,7 +141,6 @@ describe('U:CI:git', function() {
       git.getBranch().then(function() {
         expect(git.branch).to.eql('master');
         expect(childProcess.exec).to.be.calledOnce;
-        expect(git.gitContinue).to.be.calledOnce;
       }).then(done, done);
     });
 
@@ -154,7 +153,6 @@ describe('U:CI:git', function() {
       git.getBranch().then(function() {
         expect(git.branch).to.eql('develop');
         expect(childProcess.exec).to.be.calledOnce;
-        expect(git.gitContinue).to.be.calledOnce;
       }).then(done, done);
     });
 
@@ -167,7 +165,6 @@ describe('U:CI:git', function() {
       git.getBranch().then(function() {
         expect(git.branch).to.eql('master');
         expect(childProcess.exec).to.be.calledOnce;
-        expect(git.gitContinue).to.be.calledOnce;
       }).then(done, done);
     });
 
