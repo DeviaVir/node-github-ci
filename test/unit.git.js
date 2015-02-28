@@ -19,10 +19,14 @@ describe('U:CI:git', function() {
       childProcess.exec.returns(Promise.resolve());
       jobs.updateLog.returns(Promise.resolve());
 
-      git.pull().then(function(res) {
+      git.pull({
+        '_id': 1
+      }).then(function(res) {
         expect(childProcess.exec).to.be.calledOnce;
         expect(jobs.updateLog).to.be.calledTwice;
-        expect(res).to.eql(void 0);
+        expect(res).to.eql({
+          '_id': 1
+        });
       }).then(done, done);
     });
 
@@ -31,7 +35,9 @@ describe('U:CI:git', function() {
       childProcess.exec.returns(Promise.reject('fail'));
       jobs.updateLog.returns(Promise.resolve());
 
-      git.pull().catch(function(err) {
+      git.pull({
+        '_id': 1
+      }).catch(function(err) {
         expect(childProcess.exec).to.be.calledOnce;
         expect(jobs.updateLog).to.be.calledTwice;
         expect(err).to.eql('fail');
