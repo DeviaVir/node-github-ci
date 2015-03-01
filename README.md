@@ -8,11 +8,12 @@ CI is a minimalistic Continuous Integration server.
 > Note: This project requires a MongoDB instance
 
     npm install -g node-github-ci
+    npm install -g forever
     git clone git://github.com/you/yourrepo.git
     cd yourrepo
     git config --add ci.runner "npm i ; npm test"
-    ci .
-    open http://localhost:4567
+    forever start ci /yourrepo
+    add webhook to http://localhost:4567
 
 ## Usage
     Usage: ci [-hpv] path_to_git_repo
@@ -23,15 +24,15 @@ CI is a minimalistic Continuous Integration server.
       --help         Show this message
       -v, --version  Show version
 
+## Setting up config
+Please find an example in `config/data.example.js`, you can copy this to `config/data.js`. Generate a new Access Token, select at least `repo:status`: https://github.com/settings/tokens/new
+
 ## Setting the test runner
     git config --add ci.runner "npm i ; npm test"
-
-## Setting the branch
-    git config --add ci.branch deploy
 
 ## Adding HTTP Basic authentication
     git config --add ci.user username
     git config --add ci.pass password
 
 ## Post build
-After building CI will run `.git/hooks/build-failed` or `.git/hooks/build-worked` depending on test outcome. Like all git hooks, they're just shell scripts so put whatever you want in there.
+After building, CI will update your PR or Commit Status with the status.
