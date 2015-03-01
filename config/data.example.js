@@ -2,7 +2,7 @@ var config = {
   "github": {
     "username": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   },
-  "host": "http://example.com:4444"
+  "host": "http://example.com"
 };
 
 module.exports = config;
