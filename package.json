@@ -17,6 +17,7 @@
     "ejs": "^2.3.1",
     "express": "2.x",
     "express-namespace": "*",
+    "github": "^0.2.3",
     "moment": "^2.9.0",
     "mongodb": "0.9.x",
     "mongodb-bluebird": "0.0.8",
