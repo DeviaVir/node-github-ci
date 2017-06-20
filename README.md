@@ -1,4 +1,6 @@
 # CI
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/DeviaVir/node-github-ci.svg)](https://greenkeeper.io/)
 CI is a minimalistic Continuous Integration server.
 
 ![ci](http://dl.dropbox.com/u/1152970/concrete_screenshot_hi.png)
